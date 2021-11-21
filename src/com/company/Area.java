@@ -1,4 +1,5 @@
-package com.company;
-
+package software;
 public class Area {
+    String name;    
+    
 }
