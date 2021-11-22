@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package project;
 
-/**
- *
- * @author mina
- */
- abstract class User {
-    String userName;
-    String email;
-    String password;
-    String mobileNumber;
-    long ID;
-    static long  count =0;
+package com.company;
 
-    public User(String userName, String email, String password , String mobileNumber, int id) {
+abstract class User implements SignIn ,SignUp {
+    static DataBase d = new DataBase();
+    protected String userName;
+    public String email;
+    protected String password;
+    protected String mobileNumber;
+    protected long ID;
+    protected static long count = 0;
+
+    public User(String userName, String email, String password, String mobileNumber) {
         this.userName = userName;
         this.email = email;
         this.password = password;
@@ -25,6 +18,6 @@ package project;
         this.ID = count;
         count++;
     }
-    
-    
+
+
 }

@@ -1,4 +1,4 @@
-package software;
+package com.company;
 
 public class RegistrationDriver {
     protected boolean status;
