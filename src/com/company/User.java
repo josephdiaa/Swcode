@@ -15,8 +15,8 @@ abstract class User implements SignIn ,SignUp {
         this.email = email;
         this.password = password;
         this.mobileNumber = mobileNumber;
-        this.ID = count;
         count++;
+        this.ID = count;
     }
 
 
