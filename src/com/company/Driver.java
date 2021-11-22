@@ -65,6 +65,10 @@ public class Driver extends User {
                 ", nationalId='" + nationalId + '\'' +
                 ", favArea=" + favArea +
                 ", rate=" + rate +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", ID=" + ID +
                 '}';
     }
 }

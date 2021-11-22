@@ -29,7 +29,6 @@ public class Admin implements SignIn {
             }
         }
     };
-    public void verify(String nationalId){};
     public void suspend(int id){
         for(int i=0;i<d.appDriver.size();i++){
             if(d.appDriver.get(i).ID==id){

@@ -19,5 +19,14 @@ abstract class User implements SignIn ,SignUp {
         this.ID = count;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", ID=" + ID +
+                '}';
+    }
 }
