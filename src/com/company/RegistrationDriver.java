@@ -1,4 +1,4 @@
-package com.company;
+package uper.src.com.company;
 
 public class RegistrationDriver {
     protected boolean status;
@@ -10,10 +10,10 @@ public class RegistrationDriver {
     }
 
     public void changeStatus(boolean check){
-       this.status=check;
-       if(check){
-           driver.changeDriverStatus(true);
-       }
+        this.status=check;
+        if(check){
+            driver.changeDriverStatus(true);
+        }
     }
     @Override
     public String toString() {

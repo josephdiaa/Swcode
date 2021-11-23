@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.company;
+package uper.src.com.company;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,10 @@ public class Driver extends User {
     protected boolean driverStatus;
     protected String nationalId;
     protected ArrayList<Area> favArea;
+    protected double minCost = 30.0;
+    protected double maxCost = 150.0;
     Rating rate = new Rating();
+
 
     public Driver(String userName, String email, String password, String mobileNumber,String NationalId,String DriverLicense) {
         super(userName, email, password, mobileNumber);
@@ -23,7 +26,13 @@ public class Driver extends User {
         d.regDriversList.add(r);
         d.penDriver.add(this);
     }
-
+    public void addFavArea(Area area){
+        favArea.add(area);
+    }
+    public void setPrice(){
+        double range = maxCost - minCost +1;
+        double price = (double) (Math.random()*range) + minCost;
+    }
     public void changeDriverStatus(boolean c){
         this.driverStatus=c;
         if(c){
@@ -36,9 +45,7 @@ public class Driver extends User {
         return this.nationalId.equals(nationalId);
     }
 
-    public void addFavArea(Area area){
 
-    }
 
     public void notification(){
 

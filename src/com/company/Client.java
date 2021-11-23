@@ -1,14 +1,29 @@
 
-package com.company;
 
+package uper.src.com.company;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class Client extends User implements SignUp {
+    private Request request;
     public Client(String userName, String email, String password, String mobileNumber) {
         super(userName, email, password, mobileNumber);
     }
 
-    public void createRequestRide(Area a1, Area a2 ){}
+    public void requestRide(String source,String destination)
+    {
+
+        Area src=new Area(source);
+        Area dest =new Area(destination);
+        request=new Request(src,dest,this);
+        ArrayList<Driver> temp=request.notify2();
+        for(int i=0;i<temp.size();i++)
+        {
+            System.out.println( temp.get(i).toString());
+        }
+
+    }
+
     public void rateDriver(Driver d, double rate){
         d.rate.addRate(rate);
         d.rate.setRate(rate);

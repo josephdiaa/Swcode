@@ -1,4 +1,4 @@
-package com.company;
+package uper.src.com.company;
 
 public class Offer  {
     //private Request request;

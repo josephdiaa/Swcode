@@ -1,9 +1,15 @@
-package com.company;
-public class Area {
-    protected String name;
+package uper.src.com.company;
 
-    public void setName(String s){
-        this.name=s;
+
+import java.util.ArrayList;
+import java.util.*;
+public class Area {
+    String name;
+    public Area(String area){
+        this.name = area;
+    }
+    public void setName(String name){
+        this.name = name;
     }
     public String getName(){
         return name;
