@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.company;
 
 import java.util.ArrayList;
@@ -7,7 +12,7 @@ public class Driver extends User {
     protected boolean driverStatus;
     protected String nationalId;
     protected ArrayList<Area> favArea;
-    protected Rating rate;
+    Rating rate = new Rating();
 
     public Driver(String userName, String email, String password, String mobileNumber,String NationalId,String DriverLicense) {
         super(userName, email, password, mobileNumber);
@@ -22,29 +27,40 @@ public class Driver extends User {
     public void changeDriverStatus(boolean c){
         this.driverStatus=c;
         if(c){
-            d.appDriver.add(this);
+            d.DriverList.add(this);
             d.penDriver.remove(this);
         }
     }
-    
+
     public boolean checkId(String nationalId){
         return this.nationalId.equals(nationalId);
     }
-    
+
     public void addFavArea(Area area){
-        
+
     }
-    
+
     public void notification(){
-        
-        
+
+
     }
-    
+
     public void showRates(){
-        
+        this.rate.viewRatingsList();
     }
     public void Register(){
-        d.DriverList.add((Driver) this);
+        boolean check =false;
+        for(int i=0;i<d.SuspUser.size();i++){
+            if(d.SuspUser.get(i)==this.email){
+                check=true;
+            }
+        }
+        if(!check){
+            d.DriverList.add((Driver) this);
+        }
+        else{
+            System.out.println("This Email is Suspended :(");
+        }
     }
     public boolean logIn() {
         boolean flag = false;
@@ -59,16 +75,55 @@ public class Driver extends User {
 
     @Override
     public String toString() {
-        return "Driver{" +
-                "driverLicense='" + driverLicense + '\'' +
-                ", driverStatus=" + driverStatus +
-                ", nationalId='" + nationalId + '\'' +
-                ", favArea=" + favArea +
-                ", rate=" + rate +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", ID=" + ID +
-                '}';
+        return "Driver:" +'\n'+
+                "   userName=" + userName + '\n' +
+                "   email=" + email + '\n' +
+                "   mobileNumber=" + mobileNumber + '\n' +
+                "   ID=" + ID +'\n'+
+                "   driverLicense=" + driverLicense + '\n' +
+                "   driverStatus=" + driverStatus +'\n'+
+                "   nationalId=" + nationalId + '\n' +
+                "   favArea=" + favArea +'\n'+
+                rate +'\n'+
+                '}'+'\n';
+    }
+    public void setDriverLicense(String driverLicense) {
+        this.driverLicense = driverLicense;
+    }
+
+    public void setDriverStatus(boolean driverStatus) {
+        this.driverStatus = driverStatus;
+    }
+
+    public void setNationalId(String nationalId) {
+        this.nationalId = nationalId;
+    }
+
+    public void setFavArea(ArrayList<Area> favArea) {
+        this.favArea = favArea;
+    }
+
+    public void setRate(Rating rate) {
+        this.rate = rate;
+    }
+
+    public String getDriverLicense() {
+        return driverLicense;
+    }
+
+    public boolean isDriverStatus() {
+        return driverStatus;
+    }
+
+    public String getNationalId() {
+        return nationalId;
+    }
+
+    public ArrayList<Area> getFavArea() {
+        return favArea;
+    }
+
+    public Rating getRate() {
+        return rate;
     }
 }

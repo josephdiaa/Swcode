@@ -17,9 +17,8 @@ public class RegistrationDriver {
     }
     @Override
     public String toString() {
-        return "RegistrationDriver{" +
-                "status=" + status +
-                ", driver=" + driver +
-                '}';
+        return "RegistrationDriver{" +'\n'+
+                "status=" + status +'\n'+
+                driver ;
     }
 }

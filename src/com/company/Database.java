@@ -7,8 +7,8 @@ class DataBase {
     static ArrayList<Driver> DriverList = new ArrayList<Driver>();
     static ArrayList<Admin> AdminList = new ArrayList<Admin>();
     static ArrayList<RegistrationDriver>regDriversList=new ArrayList<RegistrationDriver>();
-    static ArrayList<Driver> appDriver=new ArrayList<Driver>();
     static ArrayList<Driver> penDriver=new ArrayList<Driver>();
+    static ArrayList<String> SuspUser=new ArrayList<String>();
 
 
     void update() {
