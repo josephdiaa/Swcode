@@ -20,10 +20,20 @@ public class Client extends User implements SignUp {
         super(userName, email, password, mobileNumber);
     }
 
+    /**
+     * Client's constructor to take username and password for log in
+     * @param email Client's email
+     * @param password Client's password
+     */
     public Client(String email, String password) {
         super(email, password);
     }
 
+    /**
+     * Client uses requestRide function to request a new ride
+     * @param source source area for the requested ride
+     * @param destination destination area for the requested ride
+     */
 
     public void requestRide(String source, String destination) {
         Area src = new Area(source);
@@ -31,15 +41,25 @@ public class Client extends User implements SignUp {
         request = new Request(src, dest, this);
     }
 
+    /**
+     * Client uses rateDriver method to rate the Ride's Driver
+     * @param d ride's Driver
+     * @param rate the rate that the user will set it to the Driver
+     */
     public void rateDriver(Driver d, double rate) {
         d.rate.addRate(rate);
         d.rate.setRate(rate);
     }
 
+    /**
+     * This is Function Registration To Register Client
+     * @return true: if Registration is successful
+     *         false: if this Client is suspended
+     */
     public Boolean Register() {
         boolean check = false;
-        for (int i = 0; i < d.SuspUser.size(); i++) {
-            if (d.SuspUser.get(i) == this.email) {
+        for (int i = 0; i < d.getSuspUser().size(); i++) {
+            if (d.getSuspUser().get(i) == this.email) {
                 check = true;
             }
         }
@@ -51,10 +71,16 @@ public class Client extends User implements SignUp {
         }
     }
 
+    /**
+     * This is Function To LogIn Client
+     * @return 1: if this client is suspended
+     *         2: if this client login successful
+     *         3: if this client not registered
+     */
     public int logIn() {
         boolean check = true;
-        for (int i = 0; i < d.SuspUser.size(); i++) {
-            if (d.SuspUser.get(i) == this.email) {
+        for (int i = 0; i < d.getSuspUser().size(); i++) {
+            if (d.getSuspUser().get(i) == this.email) {
                 check = false;
             }
         }
@@ -72,6 +98,10 @@ public class Client extends User implements SignUp {
         }
     }
 
+    /**
+     *This Function to Get list of Request's Offers
+     * @throws NullPointerException if there is no offer list
+     */
     public void ViewOffer() throws NullPointerException {
         if(request.listOffer.size()>=1){
             Scanner sc = new Scanner(System.in);
@@ -97,6 +127,10 @@ public class Client extends User implements SignUp {
         }
     }
 
+    /**
+     * This Function to makes Client to rate Drivers
+     * @throws IndexOutOfBoundsException if the client chooses the id greater than list of the driver
+     */
     public void rateAnyDriver() throws IndexOutOfBoundsException {
         try {
             Database d = new Database();
@@ -126,6 +160,9 @@ public class Client extends User implements SignUp {
 
     }
 
+    /**
+     * This is Client InterFace
+     */
     public void clientInterface() {
         while (true) {
             System.out.println("Client's List");
@@ -155,6 +192,10 @@ public class Client extends User implements SignUp {
         }
     }
 
+    /**
+     *This is Function to Get all Client's Data
+     * @return client's data
+     */
     @Override
     public String toString() {
         return "Client:" + '\n' +
