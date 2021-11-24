@@ -1,4 +1,4 @@
-package uper.src.com.company;
+package com.company;
 
 
 import java.util.ArrayList;
@@ -8,27 +8,29 @@ public class Request {
     protected Area destination;
     protected Client client;
     protected Driver driver;
-    protected ArrayList<Offer>listOffer;
+    protected ArrayList<Offer>listOffer=new ArrayList<Offer>();
 
     public Request( ){
 
     }
     public Request(Area a1, Area a2 , Client c ){
-
         this.source = a1;
         this.destination =a2;
         this.client  = c;
-
+        notify2();
     }
-    public ArrayList<Driver> notify2()
-    {
+
+    public void notify2() {
         TripManager tm = new TripManager();
-        return  tm.noftifyDrivers(this);
+        tm.noftifyDrivers(this);
     }
     public void getOffers() {}
-    public void makeOffer(Driver d,double price){
-        this.driver = d;
 
+    @Override
+    public String toString() {
+        return "Request:" +'\n'+
+                "   source=" + source +'\n'+
+                "   destination=" + destination +'\n'+
+                client +'\n';
     }
-
 }

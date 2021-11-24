@@ -1,10 +1,50 @@
-package uper.src.com.company;
+package com.company;
 
 public class Offer  {
-    //private Request request;
     protected double price;
-    //private Driver driver;
+    protected Driver driver;
+    protected boolean accept;
+    public Offer(){
+        accept=false;
+    }
+    public void makeOffer(double p,Driver d){
+        this.price=p;
+        this.driver=d;
+    }
 
-    public void accept(){}
-    public void reject(){}
+    @Override
+    public String toString() {
+        return "Offer:" +'\n'+
+                "   price=" + price +'\n'+
+                "Driver:"+'\n'+
+                 "  Driver name="+ driver.userName +'\n'
+                +"  Driver mobile ="+driver.mobileNumber+'\n'
+                +"  Driver license="+driver.driverLicense+'\n'
+                +"  Driver national ID ="+driver.nationalId+'\n'
+                +"  Driver rate = "+driver.rate.getAvgRate();
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public boolean isAccept() {
+        return accept;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public void setAccept(boolean accept) {
+        this.accept = accept;
+    }
 }

@@ -1,4 +1,4 @@
-package uper.src.com.company;
+package com.company;
 
 public class RegistrationDriver {
     protected boolean status;

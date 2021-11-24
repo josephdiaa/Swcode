@@ -1,4 +1,4 @@
-package uper.src.com.company;
+package com.company;
 
 import java.util.ArrayList;
 
@@ -6,30 +6,15 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class TripManager extends DataBase{
-    protected Request request;
-
-    public ArrayList<Driver> noftifyDrivers(Request cr){
-        ArrayList<Driver>ans=new ArrayList();
-        request=new Request();
-        request=cr;
-        ArrayList <Driver> dr = new ArrayList();
-        dr = get();    // DriverList in database
-
-        for (int i=0; i<dr.size(); i++){
-
-            for(int j=0; j<dr.get(i).favArea.size(); j++){
-
-                if(dr.get(i).favArea.get(j).getName().equals( request.source.getName())){
-
-                    ans.add( dr.get(i));
-
+    public void noftifyDrivers(Request cr){
+       DataBase d=new DataBase();
+        for (int i=0; i<d.DriverList.size(); i++){
+            for(int j=0; j<d.DriverList.get(i).favArea.size(); j++){
+                if(d.DriverList.get(i).favArea.get(j).getName().equalsIgnoreCase(cr.source.getName())){
+                    d.DriverList.get(i).Reqs.add(cr);
+                    break;
                 }
             }
         }
-        return  ans;
     }
-
-    public void getOffer(Offer of){}
-    public void getClientResponse(){}
-    public void createTrip(){}
 }

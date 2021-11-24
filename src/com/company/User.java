@@ -1,5 +1,5 @@
 
-package uper.src.com.company;
+package com.company;
 
 abstract class User implements SignIn ,SignUp {
     static DataBase d = new DataBase();

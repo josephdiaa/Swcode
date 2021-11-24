@@ -1,7 +1,7 @@
-package uper.src.com.company;
+package com.company;
 
 public interface SignIn {
-   public default boolean logIn(){
-      return false;
+   public default int logIn(){
+      return 1;
    }
 }

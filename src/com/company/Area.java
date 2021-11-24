@@ -1,4 +1,4 @@
-package uper.src.com.company;
+package com.company;
 
 
 import java.util.ArrayList;
@@ -12,6 +12,11 @@ public class Area {
         this.name = name;
     }
     public String getName(){
+        return name;
+    }
+
+    @Override
+    public String toString() {
         return name;
     }
 }

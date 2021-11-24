@@ -1,4 +1,4 @@
-package uper.src.com.company;
+package com.company;
 
 import java.util.ArrayList;
 

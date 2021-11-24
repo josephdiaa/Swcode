@@ -1,5 +1,7 @@
-package uper.src.com.company;
+package com.company;
 
 public interface SignUp {
-    public default void Register(){};
+    public default Boolean Register(){
+        return null;
+    };
 }
