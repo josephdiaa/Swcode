@@ -1,16 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @Class Admin
+ * @author Mina
  */
-package uper;
+package com.company;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListResourceBundle;
 import java.util.Scanner;
-
+/**
+ * @Class Admin
+ * @author Mina
+ */
 public class Admin implements SignIn {
     protected String email;
     protected String password;

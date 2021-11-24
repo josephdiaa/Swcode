@@ -1,16 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package uper;
+
+package com.company;
 
 import java.util.ArrayList;
 
 import java.util.HashMap;
 import java.util.Objects;
-
-public class TripManager extends Database{
+/**
+ * @ Class TripManager
+ * @author Renad
+ */
+public class TripManager{
+    /**
+     * this function notify all drivers has the same source Area of Request
+     * @param cr , this is client Request
+     */
     public void noftifyDrivers(Request cr){
        Database d=new Database();
         for (int i=0; i<d.DriverList.size(); i++){

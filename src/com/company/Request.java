@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package uper;
+
+package com.company;
 
 import java.util.ArrayList;
-
+/**
+ * @ Class Request
+ * @author joseph
+ */
 public class Request {
     protected Area source;
     protected Area destination;
@@ -14,9 +13,19 @@ public class Request {
     protected Driver driver;
     protected ArrayList<Offer>listOffer=new ArrayList<Offer>();
 
+    /**
+     * Default Constructor
+     */
     public Request( ){
 
     }
+
+    /**
+     * Parametrize Constructor
+     * @param a1 Source Area
+     * @param a2 destination Area
+     * @param c client
+     */
     public Request(Area a1, Area a2 , Client c ){
         this.source = a1;
         this.destination =a2;
@@ -24,12 +33,18 @@ public class Request {
         notify2();
     }
 
+    /**
+     * This Function To notify Drivers throw Trip Manger
+     */
     public void notify2() {
         TripManager tm = new TripManager();
         tm.noftifyDrivers(this);
     }
-    public void getOffers() {}
 
+    /**
+     * This function to get Request's Data
+     * @return Request's Data
+     */
     @Override
     public String toString() {
         return "Request:" +'\n'+

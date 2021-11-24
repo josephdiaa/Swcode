@@ -1,12 +1,21 @@
 
-
-package uper.src.com.company;
+package com.company;
 
 import java.util.Scanner;
-
+/**
+ * @Class Client
+ * @author Renad
+ */
 public class Client extends User implements SignUp {
-    private Request request;
+    private Request request=new Request();
 
+    /**
+     * CLient's constructor that takes all data
+     * @param userName Client's  username
+     * @param email Client's email
+     * @param password Client's password
+     * @param mobileNumber Client's mobile number
+     */
     public Client(String userName, String email, String password, String mobileNumber) {
         super(userName, email, password, mobileNumber);
     }
@@ -35,7 +44,7 @@ public class Client extends User implements SignUp {
             }
         }
         if (!check) {
-            d.ClientList.add((Client) this);
+            d.getClientList().add((Client) this);
             return true;
         } else {
             return false;
@@ -50,8 +59,8 @@ public class Client extends User implements SignUp {
             }
         }
         boolean flag = false;
-        for (int i = 0; i < d.ClientList.size(); i++) {
-            if (this.email.equals(d.ClientList.get(i).email) && this.password.equals(d.ClientList.get(i).password))
+        for (int i = 0; i < d.getClientList().size(); i++) {
+            if (this.email.equals(d.getClientList().get(i).email) && this.password.equals(d.getClientList().get(i).password))
                 flag = true;
         }
         if (check == false && flag == false) {
@@ -64,7 +73,7 @@ public class Client extends User implements SignUp {
     }
 
     public void ViewOffer() throws NullPointerException {
-        try {
+        if(request.listOffer.size()>=1){
             Scanner sc = new Scanner(System.in);
 
             for (int i = 0; i < request.listOffer.size(); i++) {
@@ -82,22 +91,21 @@ public class Client extends User implements SignUp {
                 this.rateDriver(request.listOffer.get(n - 1).driver, rate);
             }
             request.listOffer.clear();
-        } catch (NullPointerException e) {
-            System.out.println("No offers till now");
         }
-
-
+        else{
+            System.out.println("No Offer now :(");
+        }
     }
 
     public void rateAnyDriver() throws IndexOutOfBoundsException {
         try {
             Database d = new Database();
-            for (int i = 0; i < d.DriverList.size(); i++) {
+            for (int i = 0; i < d.getDriverList().size(); i++) {
                 System.out.println("Driver " + (i + 1));
-                System.out.println(d.DriverList.get(i));
+                System.out.println(d.getDriverList().get(i));
             }
-            System.out.println(d.DriverList.size());
-            if (d.DriverList.size() == 0) {
+            System.out.println(d.getDriverList().size());
+            if (d.getDriverList().size() == 0) {
                 System.out.println("No drivers available");
                 return;
             } else {
@@ -109,7 +117,7 @@ public class Client extends User implements SignUp {
                     int id = sc.nextInt();
                     System.out.println("Enter the rate");
                     double r = sc.nextDouble();
-                    this.rateDriver(d.DriverList.get(id - 1), r);
+                    this.rateDriver(d.getDriverList().get(id - 1), r);
                 }
             }
         } catch (IndexOutOfBoundsException e) {

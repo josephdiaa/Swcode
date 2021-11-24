@@ -1,11 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package uper;
+
+package com.company;
 import java.util.ArrayList;
 import java.util.*;
+/**
+ * @Class Area
+ * @author Abanoub
+ */
 public class Area {
     String name;
     public Area(String area){

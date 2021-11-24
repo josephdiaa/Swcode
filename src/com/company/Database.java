@@ -1,8 +1,12 @@
+
 package com.company;
 
 
 import java.util.ArrayList;
-
+/**
+ * @Class DataBase
+ * @author Abanoub
+ */
 class Database implements GeneralDatabase{
     static ArrayList<Client> ClientList = new ArrayList<Client>();
     static ArrayList<Driver> DriverList = new ArrayList<Driver>();

@@ -1,5 +1,9 @@
-package com.company;
 
+package com.company;
+/**
+ * @ InterFace GeneralDatabase
+ * @author Renad
+ */
 public interface GeneralDatabase {
     /**
      * update to database
