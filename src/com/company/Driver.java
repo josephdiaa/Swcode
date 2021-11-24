@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uper;
+package uper.src.com.company;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -53,7 +53,11 @@ public class Driver extends User {
     public boolean checkId(String nationalId) {
         return this.nationalId.equals(nationalId);
     }
-
+    public void viewAllRides(){
+        for (int i = 0; i < this.Reqs.size(); i++) {
+            System.out.println(this.Reqs.get(i));
+        }
+    }
     public void notification() {
         Scanner sc = new Scanner(System.in);
         System.out.println(Reqs.size());
@@ -97,12 +101,9 @@ public class Driver extends User {
                     ar = in.next();
                     this.addFavArea(new Area(ar));
                 }
-                case 2 ->
-                    this.showRates();
+                case 2 -> this.showRates();
                 case 3 -> {
-                    for (int i = 0; i < this.Reqs.size(); i++) {
-                        System.out.println(this.Reqs.get(i));
-                    }
+                  this.viewAllRides();
                 }
                 case 4 -> {
                     break;
@@ -140,7 +141,6 @@ public class Driver extends User {
             return false;
         }
     }
-
 
 
     public int logIn() {
@@ -192,7 +192,7 @@ public class Driver extends User {
                 + "   driverStatus=" + driverStatus + '\n'
                 + "   nationalId=" + nationalId + '\n'
                 + "   favArea=" + favArea + '\n'
-                + "   AvgRate=" +rate.getAvgRate() + '\n'
+                + "   AvgRate=" + rate.getAvgRate() + '\n'
                 + '}' + '\n';
     }
 
