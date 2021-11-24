@@ -1,8 +1,11 @@
-
-package com.company;
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package uper;
 abstract class User implements SignIn ,SignUp {
-    static DataBase d = new DataBase();
+    static Database d = new Database();
     protected String userName;
     public String email;
     protected String password;
@@ -18,8 +21,12 @@ abstract class User implements SignIn ,SignUp {
         count++;
         this.ID = count;
     }
+    public User(String email ,String password){
+    this.email = email;
+    this.password = password;
+    }
 
-    public static DataBase getD() {
+    public static Database getD() {
         return d;
     }
 
@@ -47,7 +54,7 @@ abstract class User implements SignIn ,SignUp {
         return count;
     }
 
-    public static void setD(DataBase d) {
+    public static void setD(Database d) {
         User.d = d;
     }
 

@@ -1,5 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package uper;
 
-package com.company;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,17 +14,12 @@ import java.util.Scanner;
 public class Admin implements SignIn {
     protected String email;
     protected String password;
-    DataBase d=new DataBase();
+    Database d=new Database();
     protected ArrayList<RegistrationDriver> list;
     public Admin(String e,String p) {
         Scanner sc=new Scanner(System.in);
         this.email=e;
         this.password=p;
-        System.out.println("Enter Pattern for admin");
-        String s=sc.next();
-        if(s.equalsIgnoreCase("jamr")){
-            d.AdminList.add(this);
-        }
     }
     public void viweListRegDriver(){
         Scanner sc=new Scanner(System.in);
@@ -89,7 +89,7 @@ public class Admin implements SignIn {
         boolean flag = false;
         for(int i=0; i< d.AdminList.size() ;i++)
         {
-            if(this.email.equals(d.AdminList.get(i).email))
+            if(this.email.equals(d.AdminList.get(i).email)&& this.password.equals(d.AdminList.get(i).password))
                 flag = true;
         }
         if(flag==true){

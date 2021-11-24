@@ -1,8 +1,9 @@
-package com.company;
+package uper;
+
 
 import java.util.ArrayList;
 
-class DataBase {
+class Database {
     static ArrayList<Client> ClientList = new ArrayList<Client>();
     static ArrayList<Driver> DriverList = new ArrayList<Driver>();
     static ArrayList<Admin> AdminList = new ArrayList<Admin>();

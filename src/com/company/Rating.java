@@ -1,8 +1,16 @@
-
-package com.company;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package uper;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author mina
+ */
 class Rating {
     ArrayList<Double> arr = new ArrayList<>();
     private double rate;
@@ -11,8 +19,10 @@ class Rating {
     public Rating(double rate) {
         this.rate = rate;
     }
-    public Rating() {}
-    public void addRate(double rate) {
+    public Rating() {
+    }
+    public void addRate(double rate)
+    {
         if(rate<1 && rate>5)
             System.out.println("INVALID RATE");
         else
@@ -21,6 +31,7 @@ class Rating {
             updateRating();
         }
     }
+
 
     public void setArr(ArrayList<Double> arr) {
         this.arr = arr;
@@ -56,17 +67,13 @@ class Rating {
     void showAvgRate(){
         System.out.println("Driver's Average Rate is : " + this.getAvgRate());
     }
-    void viewRatingsList() {
+    void viewRatingsList()
+    {
         System.out.println("All Ratings :");
         for(double r : this.arr)
         {
             System.out.println(r);
         }
 
-    }
-
-    @Override
-    public String toString() {
-        return "   avgRate=" + avgRate;
     }
 }
