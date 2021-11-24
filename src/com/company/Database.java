@@ -1,4 +1,4 @@
-package uper;
+package com.company;
 
 
 import java.util.ArrayList;
@@ -11,19 +11,77 @@ class Database implements GeneralDatabase{
     static ArrayList<Driver> penDriver=new ArrayList<Driver>();
     static ArrayList<String> SuspUser=new ArrayList<String>();
 
-
-    void update() {
+    /**
+     * update to database
+     */
+     public void update() {
     }
 
-    void delete() {
+    /**
+     * delete from database
+     */
+    public void delete() {
     }
 
-    void set() {
+    /**
+     * set to database
+     */
+    public void set() {
     }
 
-    public ArrayList<Driver> get() {
+    /**
+     * get from database
+     */
+    public void get() {
 
+    }
+
+    /**
+     * to get client list
+     * @return list of clients
+     */
+    public static ArrayList<Client> getClientList() {
+        return ClientList;
+    }
+
+    /**
+     * to get Driver's list
+     * @return list of drivers
+     */
+    public static ArrayList<Driver> getDriverList() {
         return DriverList;
+    }
+
+    /**
+     * to get list of admins
+     * @return list of admins
+     */
+    public static ArrayList<Admin> getAdminList() {
+        return AdminList;
+    }
+
+    /**
+     * to get registeration Drivers list
+     * @return list of registeration driver
+     */
+    public static ArrayList<RegistrationDriver> getRegDriversList() {
+        return regDriversList;
+    }
+
+    /**
+     * to get list of pending drivers
+     * @return list of pending drivers
+     */
+    public static ArrayList<Driver> getPenDriver() {
+        return penDriver;
+    }
+
+    /**
+     * to get suspended user
+     * @return suspended user
+     */
+    public static ArrayList<String> getSuspUser() {
+        return SuspUser;
     }
 }
 
